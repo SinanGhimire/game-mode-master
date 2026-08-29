@@ -2835,9 +2835,15 @@ function drawGun(
   ctx.translate(x, y);
   ctx.rotate(aim);
   if (facing === -1) ctx.scale(1, -1);
-  const gunH = weapon === "pistol" ? 22 : 28;
-  const gunW = gunH * (g.w / g.h);
+  const maxLen = weapon === "pistol" ? 26 : 46;
+  let gunH = weapon === "pistol" ? 22 : 28;
+  let gunW = gunH * (g.w / g.h);
+  if (gunW > maxLen) {
+    gunH *= maxLen / gunW;
+    gunW = maxLen;
+  }
   ctx.drawImage(g.img, -gunW * 0.3 - recoil, -gunH / 2, gunW, gunH);
+
   if (muzzle) {
     const m = sprites.singles.muzzle;
     drawImageCentered(ctx, m, m.width, m.height, gunW * 0.78 - recoil, 0, 34, Math.PI);
