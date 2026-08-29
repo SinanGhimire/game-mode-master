@@ -55,6 +55,7 @@ const TUNING: Record<CritterEnemyKey, CritterTuning> = {
   e_wizard: { tier: 4, radius: 26, speed: [82, 108], hp: 34, score: 170, height: 150, damage: 20, minWave: 10, weight: 1.0 },
 
   // ---- bosses
+  e_nightborne: { tier: 5, radius: 42, speed: [86, 112], hp: 165, score: 560, height: 220, damage: 30, minWave: 999, weight: 0 },
   e_gollux: { tier: 5, radius: 46, speed: [48, 64], hp: 140, score: 480, height: 214, damage: 34, minWave: 18, weight: 0.4 },
 
   // ---- graveyard shift
