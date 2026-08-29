@@ -2809,12 +2809,14 @@ function gunImage(sprites: Sprites, weapon: WeaponKey) {
   const key = w.sprite as string;
   const own = sprites.singles[key];
   const img = own && own.width ? own : sprites.singles.gun;
+  const legacy = LEGACY_GUN_SPRITES.has(key) || img === sprites.singles.gun;
   // Pack art is already fully coloured — only tint the plain legacy silhouettes.
-  const src = LEGACY_GUN_SPRITES.has(key) || img === sprites.singles.gun
-    ? tinted(img, w.color, 0.62)
-    : img;
-  return { img: src, w: img.width, h: img.height };
+  if (legacy) return { img: tinted(img, w.color, 0.62), w: img.width, h: img.height };
+  // Pack art often ships with big transparent margins; crop them so the
+  // aspect ratio (and therefore the drawn length) stays realistic.
+  return trimmed(img);
 }
+
 
 function drawGun(
   ctx: CanvasRenderingContext2D,
