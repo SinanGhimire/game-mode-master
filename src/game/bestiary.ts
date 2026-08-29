@@ -41,6 +41,7 @@ export const ENEMY_LORE: Record<CritterEnemyKey, EnemyLore> = {
   e_golem_armor: { cls: "elite", role: "Frontal stone barrier — shots from the front bounce off." },
   e_bat: { cls: "fodder", role: "Cave bat that weaves erratically to spoil your aim." },
   e_wizard: { cls: "ranged", role: "Floating warlock that hurls arcane bolts from deep cover." },
+  e_nightborne: { cls: "guardian", role: "Demon revenant — closes distance in savage lunges and hits like a truck." },
   e_gollux: { cls: "guardian", role: "Stone titan — its front plating turns away incoming fire." },
   e_blob_gray: { cls: "fodder", role: "Gelatinous gray sack that bursts into three pups when popped." },
   e_blob_pup: { cls: "fodder", role: "Splinter of a bigger blob — tiny, fast and relentless." },

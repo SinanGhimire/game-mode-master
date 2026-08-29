@@ -56,6 +56,9 @@ import wizardDeath from "@/assets/foes/wizard-death.png";
 import golluxIdle from "@/assets/foes/gollux-idle.png";
 import golluxWalk from "@/assets/foes/gollux-walk.png";
 import golluxDeath from "@/assets/foes/gollux-death.png";
+import nightborneIdle from "@/assets/foes/nightborne-idle.png";
+import nightborneWalk from "@/assets/foes/nightborne-walk.png";
+import nightborneDeath from "@/assets/foes/nightborne-death.png";
 import slimeBossIdle from "@/assets/foes/slime_boss-idle.png";
 import slimeBossWalk from "@/assets/foes/slime_boss-walk.png";
 import slimeBossDeath from "@/assets/foes/slime_boss-death.png";
@@ -78,4 +81,5 @@ export const ENEMY_ART: Partial<Record<CritterEnemyKey, ArtStrips>> = {
   e_bat: [batIdle, batWalk, batDeath],
   e_wizard: [wizardIdle, wizardWalk, wizardDeath],
   e_gollux: [golluxIdle, golluxWalk, golluxDeath],
+  e_nightborne: [nightborneIdle, nightborneWalk, nightborneDeath],
 };

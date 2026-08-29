@@ -31,6 +31,7 @@ export const AI_ROLE: Record<CritterEnemyKey, AiRole> = {
 
   // bosses
   e_gollux: "shield",
+  e_nightborne: "dash",
 
   // graveyard shift
   e_blob_gray: "split",

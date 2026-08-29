@@ -35,7 +35,7 @@ export type CritterEnemyKey =
   // ---- vermin & arcane
   | "e_bat" | "e_wizard"
   // ---- bosses
-  | "e_gollux"
+  | "e_gollux" | "e_nightborne"
   // ---- graveyard shift
   | "e_blob_gray" | "e_blob_pup" | "e_zombie" | "e_ghost" | "e_hound";
 
@@ -107,6 +107,7 @@ export const CRITTER_ENEMIES: CritterDesign[] = [
   { key: "e_wizard", name: "Crimson Warlock", body: "#b0343f", shade: "#5a121a", eye: "#8bf7c8", shape: "tall", crown: "fin", mouth: "none", eyes: 2, arms: true, tail: false, size: 1.1, legs: "none", pattern: "none", brow: "angry", glow: "rgba(176,52,63,0.4)" },
 
   // ---- bosses
+  { key: "e_nightborne", name: "NightBorne", body: "#3b2a55", shade: "#170f26", eye: "#ff3b5c", shape: "tall", crown: "spikes", mouth: "fangs", eyes: 2, arms: true, tail: false, size: 1.7, legs: "two", pattern: "none", brow: "angry", glow: "rgba(255,59,92,0.4)" },
   { key: "e_gollux", name: "Gollux", body: "#8a5a52", shade: "#43272a", eye: "#ffd7a8", shape: "block", crown: "spikes", mouth: "none", eyes: 2, arms: true, tail: false, size: 1.6, legs: "two", pattern: "plates", brow: "angry", glow: "rgba(138,90,82,0.45)" },
 
 
