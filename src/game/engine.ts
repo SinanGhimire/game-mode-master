@@ -1435,8 +1435,10 @@ function waveBurst(s: GameState) {
     (s.wave === 5 || s.wave === 10 || s.wave === 16 || s.wave === 20 || s.wave === 23);
   const regularBoss = s.mode === "boss" && s.wave % 3 === 0;
   if (survivalBoss || regularBoss) {
+    // Bosses alternate between the stone titan and the NightBorne revenant.
+    const bossSpecies = s.wave % 2 === 0 ? "e_nightborne" : "e_gollux";
     spawnEnemy(s, true, {
-      species: "e_gollux",
+      species: bossSpecies,
       scale: s.wave === 5 ? 1.35 : s.wave === 10 || s.wave === 16 ? 1.8 : 2.35,
     });
     s.popups.push({
@@ -1767,7 +1769,7 @@ function killEnemy(s: GameState, e: Enemy) {
     }
   }
   if (e.role === "brood") s.popups.push({ x: e.x, y: e.y - 90, life: 2, text: "NEST DESTROYED" });
-  if (s.mode === "survival" && s.wave === 23 && e.species === "e_gollux") {
+  if (s.mode === "survival" && s.wave === 23 && (e.species === "e_gollux" || e.species === "e_nightborne")) {
     s.won = true;
     s.over = true;
     s.popups.push({ x: e.x, y: e.y - 120, life: 3, text: "SURVIVAL CLEARED!" });
