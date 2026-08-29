@@ -823,6 +823,55 @@ function pick<T>(arr: T[]): T {
 
 const tintCache = new Map<string, HTMLCanvasElement>();
 
+/** Crops the transparent padding off a sprite so pack art keeps sane proportions. */
+const trimCache = new Map<string, { img: CanvasImageSource; w: number; h: number }>();
+
+function trimmed(img: HTMLImageElement): { img: CanvasImageSource; w: number; h: number } {
+  if (!img.width) return { img, w: img.width, h: img.height };
+  const hit = trimCache.get(img.src);
+  if (hit) return hit;
+  const fallback = { img: img as CanvasImageSource, w: img.width, h: img.height };
+  const c = document.createElement("canvas");
+  c.width = img.width;
+  c.height = img.height;
+  const g = c.getContext("2d", { willReadFrequently: true });
+  if (!g) return fallback;
+  g.drawImage(img, 0, 0);
+  let data: ImageData;
+  try {
+    data = g.getImageData(0, 0, c.width, c.height);
+  } catch {
+    return fallback;
+  }
+  let minX = c.width;
+  let minY = c.height;
+  let maxX = -1;
+  let maxY = -1;
+  for (let y = 0; y < c.height; y++) {
+    for (let x = 0; x < c.width; x++) {
+      if (data.data[(y * c.width + x) * 4 + 3]! > 12) {
+        if (x < minX) minX = x;
+        if (x > maxX) maxX = x;
+        if (y < minY) minY = y;
+        if (y > maxY) maxY = y;
+      }
+    }
+  }
+  if (maxX < 0) return fallback;
+  const w = maxX - minX + 1;
+  const h = maxY - minY + 1;
+  const out = document.createElement("canvas");
+  out.width = w;
+  out.height = h;
+  const og = out.getContext("2d");
+  if (!og) return fallback;
+  og.drawImage(c, minX, minY, w, h, 0, 0, w, h);
+  const res = { img: out as CanvasImageSource, w, h };
+  trimCache.set(img.src, res);
+  return res;
+}
+
+
 function tinted(img: HTMLImageElement, color: string, strength = 0.55): CanvasImageSource {
   if (!img.width) return img;
   const key = `${img.src}|${color}|${strength}`;
