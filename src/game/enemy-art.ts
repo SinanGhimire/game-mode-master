@@ -14,25 +14,10 @@ import skelWhiteDeath from "@/assets/foes/skel_white-death.png";
 import skelGoldIdle from "@/assets/foes/skel_gold-idle.png";
 import skelGoldWalk from "@/assets/foes/skel_gold-walk.png";
 import skelGoldDeath from "@/assets/foes/skel_gold-death.png";
-import demonIdle from "@/assets/foes/demon-idle.png";
-import demonWalk from "@/assets/foes/demon-walk.png";
-import demonDeath from "@/assets/foes/demon-death.png";
-import golemBlueIdle from "@/assets/foes/golem_blue-idle.png";
-import golemBlueWalk from "@/assets/foes/golem_blue-walk.png";
-import golemBlueDeath from "@/assets/foes/golem_blue-death.png";
-import golemEmberIdle from "@/assets/foes/golem_ember-idle.png";
-import golemEmberWalk from "@/assets/foes/golem_ember-walk.png";
-import golemEmberDeath from "@/assets/foes/golem_ember-death.png";
-import golemArmorIdle from "@/assets/foes/golem_armor-idle.png";
-import golemArmorWalk from "@/assets/foes/golem_armor-walk.png";
-import golemArmorDeath from "@/assets/foes/golem_armor-death.png";
 
 import mushroomIdle from "@/assets/foes/mushroom-idle.png";
 import mushroomWalk from "@/assets/foes/mushroom-walk.png";
 import mushroomDeath from "@/assets/foes/mushroom-death.png";
-import bringerIdle from "@/assets/foes/bringer-idle.png";
-import bringerWalk from "@/assets/foes/bringer-walk.png";
-import bringerDeath from "@/assets/foes/bringer-death.png";
 
 import impVioletIdle from "@/assets/foes/imp_violet-idle.png";
 import impVioletWalk from "@/assets/foes/imp_violet-walk.png";
@@ -50,18 +35,21 @@ import gnatDeath from "@/assets/foes/gnat-death.png";
 import batIdle from "@/assets/foes/bat-idle.png";
 import batWalk from "@/assets/foes/bat-walk.png";
 import batDeath from "@/assets/foes/bat-death.png";
-import wizardIdle from "@/assets/foes/wizard-idle.png";
-import wizardWalk from "@/assets/foes/wizard-walk.png";
-import wizardDeath from "@/assets/foes/wizard-death.png";
-import golluxIdle from "@/assets/foes/gollux-idle.png";
-import golluxWalk from "@/assets/foes/gollux-walk.png";
-import golluxDeath from "@/assets/foes/gollux-death.png";
+import rootImpIdle from "@/assets/foes/root_imp-idle.png";
+import rootImpWalk from "@/assets/foes/root_imp-walk.png";
+import rootImpDeath from "@/assets/foes/root_imp-death.png";
+import sticklooterIdle from "@/assets/foes/sticklooter-idle.png";
+import sticklooterWalk from "@/assets/foes/sticklooter-walk.png";
+import sticklooterDeath from "@/assets/foes/sticklooter-death.png";
+import slimeSkullIdle from "@/assets/foes/slime_skull-idle.png";
+import slimeSkullWalk from "@/assets/foes/slime_skull-walk.png";
+import slimeSkullDeath from "@/assets/foes/slime_skull-death.png";
+import demonSlimeIdle from "@/assets/foes/demon_slime-idle.png";
+import demonSlimeWalk from "@/assets/foes/demon_slime-walk.png";
+import demonSlimeDeath from "@/assets/foes/demon_slime-death.png";
 import nightborneIdle from "@/assets/foes/nightborne-idle.png";
 import nightborneWalk from "@/assets/foes/nightborne-walk.png";
 import nightborneDeath from "@/assets/foes/nightborne-death.png";
-import slimeBossIdle from "@/assets/foes/slime_boss-idle.png";
-import slimeBossWalk from "@/assets/foes/slime_boss-walk.png";
-import slimeBossDeath from "@/assets/foes/slime_boss-death.png";
 
 /** [idle, walk, death] strip urls. */
 export type ArtStrips = [string, string, string];
@@ -69,17 +57,15 @@ export type ArtStrips = [string, string, string];
 export const ENEMY_ART: Partial<Record<CritterEnemyKey, ArtStrips>> = {
   e_skel_white: [skelWhiteIdle, skelWhiteWalk, skelWhiteDeath],
   e_skel_gold: [skelGoldIdle, skelGoldWalk, skelGoldDeath],
-  e_golem_blue: [golemBlueIdle, golemBlueWalk, golemBlueDeath],
-  e_golem_ember: [golemEmberIdle, golemEmberWalk, golemEmberDeath],
-  e_golem_armor: [golemArmorIdle, golemArmorWalk, golemArmorDeath],
   e_imp_violet: [impVioletIdle, impVioletWalk, impVioletDeath],
   e_imp_bile: [impBileIdle, impBileWalk, impBileDeath],
   e_imp_crimson: [impCrimsonIdle, impCrimsonWalk, impCrimsonDeath],
   e_gnat: [gnatIdle, gnatWalk, gnatDeath],
   e_mushroom: [mushroomIdle, mushroomWalk, mushroomDeath],
-  e_bringer: [bringerIdle, bringerWalk, bringerDeath],
   e_bat: [batIdle, batWalk, batDeath],
-  e_wizard: [wizardIdle, wizardWalk, wizardDeath],
-  e_gollux: [golluxIdle, golluxWalk, golluxDeath],
   e_nightborne: [nightborneIdle, nightborneWalk, nightborneDeath],
+  e_root_imp: [rootImpIdle, rootImpWalk, rootImpDeath],
+  e_sticklooter: [sticklooterIdle, sticklooterWalk, sticklooterDeath],
+  e_slime_skull: [slimeSkullIdle, slimeSkullWalk, slimeSkullDeath],
+  e_demon_slime: [demonSlimeIdle, demonSlimeWalk, demonSlimeDeath],
 };

@@ -1156,7 +1156,7 @@ export function createState(character: CharacterKey = "spike", mode: RunMode = "
     sfx: [],
     takenUpgrades: {},
     paused: false,
-    floor: "slab",
+    floor: "dungeon",
     arenaR: arenaRadius(1, 1),
   };
   // seed the arena lightly: a couple of scouts, not a crowd
@@ -1346,7 +1346,7 @@ function spawnEnemy(s: GameState, forceElite = false, opts: SpawnOpts = {}) {
     spawned: 0,
     didSplit: false,
     buffed: 0,
-    shielded: species === "e_golem_armor",
+    shielded: false,
     minion: opts.minion ?? false,
   };
   s.enemies.push(e);
@@ -1436,7 +1436,7 @@ function waveBurst(s: GameState) {
   const regularBoss = s.mode === "boss" && s.wave % 3 === 0;
   if (survivalBoss || regularBoss) {
     // Bosses alternate between the stone titan and the NightBorne revenant.
-    const bossSpecies = s.wave % 2 === 0 ? "e_nightborne" : "e_gollux";
+    const bossSpecies = s.wave % 2 === 0 ? "e_nightborne" : "e_demon_slime";
     spawnEnemy(s, true, {
       species: bossSpecies,
       scale: s.wave === 5 ? 1.35 : s.wave === 10 || s.wave === 16 ? 1.8 : 2.35,
@@ -1769,7 +1769,7 @@ function killEnemy(s: GameState, e: Enemy) {
     }
   }
   if (e.role === "brood") s.popups.push({ x: e.x, y: e.y - 90, life: 2, text: "NEST DESTROYED" });
-  if (s.mode === "survival" && s.wave === 23 && (e.species === "e_gollux" || e.species === "e_nightborne")) {
+  if (s.mode === "survival" && s.wave === 23 && (e.species === "e_demon_slime" || e.species === "e_nightborne")) {
     s.won = true;
     s.over = true;
     s.popups.push({ x: e.x, y: e.y - 120, life: 3, text: "SURVIVAL CLEARED!" });
