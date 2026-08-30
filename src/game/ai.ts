@@ -18,20 +18,20 @@ export const AI_ROLE: Record<CritterEnemyKey, AiRole> = {
   // undead
   e_skel_white: "chase",
   e_skel_gold: "charge",
-  e_bringer: "reaper",
 
   // golems
-  e_golem_blue: "rhino",
-  e_golem_ember: "bomber",
-  e_golem_armor: "shield",
 
   // vermin & arcane
   e_bat: "zigzag",
-  e_wizard: "shooter",
 
   // bosses
-  e_gollux: "shield",
   e_nightborne: "dash",
+  e_demon_slime: "rhino",
+
+  // slimes & roots
+  e_root_imp: "chase",
+  e_sticklooter: "swarm",
+  e_slime_skull: "leap",
 
   // graveyard shift
   e_blob_gray: "split",

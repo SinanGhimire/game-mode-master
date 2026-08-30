@@ -3,22 +3,18 @@ import { CRITTER_STATS, CRITTER_TIER } from "./critter-species";
 import type { Gait } from "./art-strips";
 
 /** Where an enemy sits in the wave design. */
-export type EnemyClass = "fodder" | "ranged" | "disruptor" | "elite" | "guardian";
+export type EnemyClass = "fodder" | "disruptor" | "boss";
 
 export const CLASS_LABEL: Record<EnemyClass, string> = {
   fodder: "Fodder",
-  ranged: "Ranged",
   disruptor: "Disruptor",
-  elite: "Elite",
-  guardian: "Guardian",
+  boss: "Boss",
 };
 
 export const CLASS_COLOR: Record<EnemyClass, string> = {
   fodder: "#8ff6ff",
-  ranged: "#a6ff7d",
   disruptor: "#ffb46b",
-  elite: "#ff7a9c",
-  guardian: "#ffd24a",
+  boss: "#ffd24a",
 };
 
 export interface EnemyLore {
@@ -33,16 +29,14 @@ export const ENEMY_LORE: Record<CritterEnemyKey, EnemyLore> = {
   e_imp_crimson: { cls: "disruptor", role: "Horned imp that sprints in sudden bursts." },
   e_gnat: { cls: "fodder", role: "Fuzzy flyer that weaves hard to break your auto-aim." },
   e_mushroom: { cls: "disruptor", role: "Trundles in and leaves a trail of toxic spores behind it." },
-  e_bringer: { cls: "elite", role: "Scythe-wielding wraith that hits twice as hard once you are hurt." },
   e_skel_white: { cls: "fodder", role: "Sword-armed footsoldier that walks you down and swings." },
   e_skel_gold: { cls: "disruptor", role: "Marks a lane, then charges straight down it." },
-  e_golem_blue: { cls: "elite", role: "Rams the arena border and showers you in debris." },
-  e_golem_ember: { cls: "elite", role: "Accelerates in and detonates on contact." },
-  e_golem_armor: { cls: "elite", role: "Frontal stone barrier — shots from the front bounce off." },
   e_bat: { cls: "fodder", role: "Cave bat that weaves erratically to spoil your aim." },
-  e_wizard: { cls: "ranged", role: "Floating warlock that hurls arcane bolts from deep cover." },
-  e_nightborne: { cls: "guardian", role: "Demon revenant — closes distance in savage lunges and hits like a truck." },
-  e_gollux: { cls: "guardian", role: "Stone titan — its front plating turns away incoming fire." },
+  e_nightborne: { cls: "boss", role: "Demon revenant — closes distance in savage lunges and hits like a truck." },
+  e_root_imp: { cls: "fodder", role: "Thorny woodland imp that marches you down and claws." },
+  e_sticklooter: { cls: "fodder", role: "Bouncy little slime that swarms in sticky packs." },
+  e_slime_skull: { cls: "disruptor", role: "Skull-capped ooze that leaps and craters where it lands." },
+  e_demon_slime: { cls: "boss", role: "Boss ooze — charges the arena wall and buries you in debris." },
   e_blob_gray: { cls: "fodder", role: "Gelatinous gray sack that bursts into three pups when popped." },
   e_blob_pup: { cls: "fodder", role: "Splinter of a bigger blob — tiny, fast and relentless." },
   e_zombie: { cls: "fodder", role: "Shambles you down and heals itself with every bite it lands." },
