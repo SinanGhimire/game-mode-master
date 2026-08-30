@@ -42,21 +42,17 @@ const TUNING: Record<CritterEnemyKey, CritterTuning> = {
   e_skel_white: { tier: 2, radius: 24, speed: [92, 122], hp: 13, score: 30, height: 132, damage: 13, minWave: 5, weight: 2.0 },
   e_skel_gold: { tier: 3, radius: 26, speed: [110, 154], hp: 19, score: 48, height: 140, damage: 16, minWave: 7, weight: 1.6 },
 
-  e_bringer: { tier: 4, radius: 30, speed: [78, 104], hp: 48, score: 190, height: 168, damage: 24, minWave: 11, weight: 0.9 },
-
   // ---- golems: heavy late-wave threats
-  e_golem_blue: { tier: 4, radius: 34, speed: [64, 88], hp: 40, score: 140, height: 172, damage: 22, minWave: 9, weight: 1.0 },
-  e_golem_ember: { tier: 4, radius: 35, speed: [72, 104], hp: 44, score: 160, height: 176, damage: 26, minWave: 12, weight: 0.9 },
-
-  e_golem_armor: { tier: 5, radius: 42, speed: [52, 70], hp: 90, score: 300, height: 200, damage: 30, minWave: 15, weight: 0.6 },
 
   // ---- vermin & arcane
   e_bat: { tier: 1, radius: 18, speed: [140, 184], hp: 7, score: 18, height: 92, damage: 8, minWave: 2, weight: 2.6 },
-  e_wizard: { tier: 4, radius: 26, speed: [82, 108], hp: 34, score: 170, height: 150, damage: 20, minWave: 10, weight: 1.0 },
 
   // ---- bosses
+  e_root_imp: { tier: 2, radius: 26, speed: [104, 138], hp: 14, score: 32, height: 126, damage: 12, minWave: 2, weight: 2.8 },
+  e_sticklooter: { tier: 1, radius: 22, speed: [112, 146], hp: 9, score: 16, height: 100, damage: 9, minWave: 1, weight: 3.0 },
+  e_slime_skull: { tier: 3, radius: 25, speed: [118, 150], hp: 16, score: 50, height: 112, damage: 14, minWave: 4, weight: 1.8 },
+  e_demon_slime: { tier: 5, radius: 46, speed: [70, 92], hp: 175, score: 600, height: 226, damage: 32, minWave: 999, weight: 0 },
   e_nightborne: { tier: 5, radius: 42, speed: [86, 112], hp: 165, score: 560, height: 220, damage: 30, minWave: 999, weight: 0 },
-  e_gollux: { tier: 5, radius: 46, speed: [48, 64], hp: 140, score: 480, height: 214, damage: 34, minWave: 18, weight: 0.4 },
 
   // ---- graveyard shift
   e_blob_gray: { tier: 2, radius: 28, speed: [78, 100], hp: 18, score: 38, height: 116, damage: 11, minWave: 2, weight: 2.2 },

@@ -27,15 +27,15 @@ export type CritterEnemyKey =
   // ---- critters
   | "e_mushroom"
   // ---- undead
-  | "e_skel_white" | "e_skel_gold" | "e_bringer"
+  | "e_skel_white" | "e_skel_gold"
   // ---- imps
-  | "e_imp_violet" | "e_imp_bile" | "e_imp_crimson" | "e_gnat"
-  // ---- golems
-  | "e_golem_blue" | "e_golem_ember" | "e_golem_armor"
-  // ---- vermin & arcane
-  | "e_bat" | "e_wizard"
+  | "e_imp_violet" | "e_imp_bile" | "e_imp_crimson" | "e_gnat" | "e_root_imp"
+  // ---- vermin
+  | "e_bat"
+  // ---- slimes
+  | "e_sticklooter" | "e_slime_skull"
   // ---- bosses
-  | "e_gollux" | "e_nightborne"
+  | "e_nightborne" | "e_demon_slime"
   // ---- graveyard shift
   | "e_blob_gray" | "e_blob_pup" | "e_zombie" | "e_ghost" | "e_hound";
 
@@ -96,22 +96,21 @@ export const CRITTER_ENEMIES: CritterDesign[] = [
   { key: "e_skel_white", name: "Bone Soldier", body: "#e8e8ee", shade: "#8b8b98", eye: "#9fd8ff", shape: "tall", crown: "none", mouth: "fangs", eyes: 2, arms: true, tail: false, size: 1, legs: "two", pattern: "none", brow: "angry" },
   { key: "e_skel_gold", name: "Gilded Bones", body: "#e8c56a", shade: "#8c6f1f", eye: "#fff0b8", shape: "tall", crown: "none", mouth: "fangs", eyes: 2, arms: true, tail: false, size: 1.05, legs: "two", pattern: "none", brow: "angry", glow: "rgba(232,197,106,0.35)" },
 
-  { key: "e_bringer", name: "Bringer of Death", body: "#8a5fc0", shade: "#3d2a5c", eye: "#ff5a4a", shape: "tall", crown: "fin", mouth: "none", eyes: 1, arms: true, tail: false, size: 1.35, legs: "two", pattern: "none", brow: "angry", glow: "rgba(138,95,192,0.4)" },
 
 
 
   // ---- golems: the heavy late-wave threats
-  { key: "e_golem_blue", name: "Rime Golem", body: "#4a6a9c", shade: "#1d2c46", eye: "#8fd8ff", shape: "block", crown: "spikes", mouth: "none", eyes: 2, arms: true, tail: false, size: 1.45, legs: "two", pattern: "plates", brow: "angry", glow: "rgba(74,106,156,0.4)" },
   // ---- vermin & arcane
   { key: "e_bat", name: "Night Bat", body: "#6b5aa8", shade: "#2f2650", eye: "#ffd24a", shape: "orb", crown: "ears", mouth: "fangs", eyes: 2, arms: false, tail: false, size: 0.7, legs: "none", pattern: "none", wings: true, glow: "rgba(107,90,168,0.32)" },
-  { key: "e_wizard", name: "Crimson Warlock", body: "#b0343f", shade: "#5a121a", eye: "#8bf7c8", shape: "tall", crown: "fin", mouth: "none", eyes: 2, arms: true, tail: false, size: 1.1, legs: "none", pattern: "none", brow: "angry", glow: "rgba(176,52,63,0.4)" },
 
   // ---- bosses
+  { key: "e_root_imp", name: "Root Imp", body: "#7a9c4a", shade: "#33501c", eye: "#ffe9a8", shape: "orb", crown: "horns", mouth: "fangs", eyes: 2, arms: true, tail: false, size: 0.9, legs: "two", pattern: "spots", brow: "angry" },
+  { key: "e_sticklooter", name: "Sticklooter", body: "#7fd6a8", shade: "#2f6b4c", eye: "#0f2a1c", shape: "jelly", crown: "none", mouth: "grin", eyes: 2, arms: false, tail: false, size: 0.8, legs: "none", pattern: "spots" },
+  { key: "e_slime_skull", name: "Skull Ooze", body: "#9fb6d8", shade: "#3c4a68", eye: "#ff7a4a", shape: "jelly", crown: "none", mouth: "fangs", eyes: 2, arms: false, tail: false, size: 0.9, legs: "none", pattern: "none", brow: "angry", glow: "rgba(159,182,216,0.32)" },
+  { key: "e_demon_slime", name: "Demon Slime", body: "#c33f5c", shade: "#5c1424", eye: "#ffd24a", shape: "blob", crown: "horns", mouth: "maw", eyes: 2, arms: true, tail: false, size: 1.8, legs: "two", pattern: "none", brow: "angry", glow: "rgba(195,63,92,0.45)" },
   { key: "e_nightborne", name: "NightBorne", body: "#3b2a55", shade: "#170f26", eye: "#ff3b5c", shape: "tall", crown: "spikes", mouth: "fangs", eyes: 2, arms: true, tail: false, size: 1.7, legs: "two", pattern: "none", brow: "angry", glow: "rgba(255,59,92,0.4)" },
-  { key: "e_gollux", name: "Gollux", body: "#8a5a52", shade: "#43272a", eye: "#ffd7a8", shape: "block", crown: "spikes", mouth: "none", eyes: 2, arms: true, tail: false, size: 1.6, legs: "two", pattern: "plates", brow: "angry", glow: "rgba(138,90,82,0.45)" },
 
 
-  { key: "e_golem_ember", name: "Ember Golem", body: "#c8862a", shade: "#6a4109", eye: "#ffd24a", shape: "block", crown: "spikes", mouth: "none", eyes: 2, arms: true, tail: false, size: 1.5, legs: "two", pattern: "plates", brow: "angry", glow: "rgba(200,134,42,0.45)" },
 ];
 
 export const CRITTER_HEROES: CritterDesign[] = [
